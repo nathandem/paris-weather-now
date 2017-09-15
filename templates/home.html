@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Station</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+	</head>
+  <body>
+
+    <section id="header" class="dark">
+        <header>
+          <h1>Paris weather</h1>
+          <img src="{{ data.icon_url }}" alt="Weather logo">
+        </header>
+        <footer>
+          <ul>
+            <li>Weather: {{ data.weather }}</li>
+            <li>Temperature: {{ data.temp_c }}</li>
+            <li>Temperature feels like: {{ data.feelslike_c }}</li>
+            <li>Precipitation: {{ data.precip_today_string }}</li>
+            <li>Wind: {{ data.wind_string }}</li>
+            <li>Humidity: {{ data.relative_humidity }}</li>
+            <li>{{ data.observation_time }}</li>
+          </ul>
+        </footer>
+    </section>
+
+    <!-- Scripts -->
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/js/jquery.scrolly.min.js" %}"></script>
+    <script src="{% static "assets/js/skel.min.js" %}"></script>
+    <script src="{% static "assets/js/util.js" %}"></script>
+    <script src="{% static "assets/js/main.js" %}"></script>
+
+  </body>
+</html>
